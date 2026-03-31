@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-seed-admin-user
+      author: timode-6
+      changes:
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column:
+                  name: id
+                  valueSequenceNext: user_credentials_seq
+              - column:
+                  name: login
+                  value: admin
+              - column:
+                  name: password
+                  value: "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy"
+              - column:
+                  name: user_id
+                  valueNumeric: 1
+              - column:
+                  name: role
+                  value: ADMIN
